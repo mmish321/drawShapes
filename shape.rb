@@ -1,29 +1,24 @@
 class Shape
-	attr_accessor :x, :y, :width, :length, :color
-	def initialize(x, y, width, length , color)
-		@x = x
-		@y = y
-		@width = width
-		@length = length
+	attr_accessor :x, :y, :width, :length, :color, :zorder
+	def initialize
+		@x = 0.0
+		@y = 0.0
+		@width = 0.0
+		@length = 0.0
 		@color = Gosu::Color.new(0xff_000000)
+		@color.red = rand_color_component
+		@color.green = rand_color_component
+		@color.blue = rand_color_component
+		@zorder = 0
 	end
 
 	def draw_shape
-		Gosu.draw_line(x,y,color,x+width,y,color, z= 0, mode= :default)
-		Gosu.draw_line(x,y,color,x+length,y+length,color, z= 0, mode= :default)
-		Gosu.draw_line(x+length,y+length,color,x+width,y+width,color, z= 0, mode= :default)
-		Gosu.draw_line(x,y,color,x+width,y,color, z= 0, mode= :default)
-
-
-
-
-
-
-
 
 	end
 
-
+	def rand_color_component
+		rand(256 - 60) + 60 # Not too dark!
+	end
 
 
 
