@@ -7,7 +7,10 @@ class Rectangle
 		@y = y
 		@width = width
 		@length = length
-		@color = Gosu::Color.argb(0xff_ff0000)
+		@color = Gosu::Color.new(0xff_000000)
+		@color.red = rand(256 - 40) + 40
+		@color.green = rand(256 - 40) + 40
+		@color.blue = rand(256 - 40) + 40
 		@zorder = 1
 	end
 

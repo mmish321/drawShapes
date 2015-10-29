@@ -8,6 +8,8 @@ class GameWindow < Gosu::Window
 	def initialize
 		super 640, 480
 		self.caption = "Draw Stuff"
+		@rectangle = Array.new
+		@triangle = Array.new
 		
 	end
 
@@ -15,10 +17,14 @@ class GameWindow < Gosu::Window
 
 
 	def draw
-		# rec = Rectangle.new(90,180,100,100)
-		# rec.draw_shape
-		trig = Triangle.new(90,180,100,100)
-		trig.draw_shape
+		if rand(300s) then
+			@rectangle.push(Rectangle.new(rand(640), rand(480),rand(200), rand(200)))
+		end
+		if rand(300)  then
+			@triangle.push(Triangle.new(rand(640), rand(480), rand(200)))
+		end
+		@rectangle.each {|rect| rect.draw_shape}
+		@triangle.each{|tri| tri.draw_shape}
 	end
 
 
