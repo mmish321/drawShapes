@@ -1,7 +1,7 @@
 require_relative "shape"
 class Triangle
 
-	attr_accessor :x, :y, :width, :length, :color , :zorder, :height
+	attr_accessor :x, :y, :width,  :color , :zorder, :height
 	attr_reader :height
 	def initialize(x, y, width)
 		@x = x
@@ -15,7 +15,7 @@ class Triangle
 		@height = (Math.sqrt(3)*width)/2
 	end
 
-	def draw_shape
+	def draw_tri
 		Gosu.draw_line(x, y, color, x + width, y, color, zorder)
 		Gosu.draw_line(x + (width/2.0), y-((width/2.0) * Math.sqrt(3)), color, x+width, y, color, zorder)
 		Gosu.draw_line(x, y , color, x + (width/2.0), y - ((width/2.0) * Math.sqrt(3)), color, zorder)
